@@ -6,7 +6,7 @@ import requests
 import io
 
 # Initialize the client
-client = grpcclient.InferenceServerClient(url="localhost:8031")
+client = grpcclient.InferenceServerClient(url="localhost:8001")
 
 # Define image preprocessing function
 def preprocess_image(image):
@@ -50,9 +50,7 @@ response = client.infer(
 
 # Get predictions
 output = response.as_numpy("predictions")
-print("Predictions:", output)
 
-# Optional: Print predictions with labels
 labels = ["atelectasis", "cardiomegaly", "pleural effusion", "infiltration", 
           "lung mass", "lung nodule", "pneumonia", "pneumothorax", "consolidation", 
           "edema", "emphysema", "fibrosis", "pleural thicken", "hernia"]

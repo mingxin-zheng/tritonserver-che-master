@@ -13,14 +13,6 @@ RUN pip install \
     timm \
     einops
 
-# # Copy model files and code
-# RUN mkdir -p /opt/chestxray
-
-# COPY configs/ /opt/chestxray/configs/
-# COPY factory/ /opt/chestxray/factory/
-# COPY models/ /opt/chestxray/models/
-# COPY pretrained_bert_weights/ /opt/chestxray/pretrained_bert_weights/
-# COPY test_example.py /opt/chestxray/test_example.py
 
 RUN apt-get update && apt-get install -y git-lfs && git lfs install
 
@@ -33,6 +25,3 @@ RUN mkdir -p /models
 
 # Copy Triton model configuration
 COPY triton_model_repository/ /models/
-
-# docker build -t chest-xray-triton .
-# docker run --gpus "device=2" -p 8030:8000 -p 8031:8001 -p 8032:8002 chest-xray-triton tritonserver --model-repository=/models
