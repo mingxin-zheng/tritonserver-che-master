@@ -1,13 +1,11 @@
 # Chest X-Ray Classification Triton Server
 
-This repository demonstrates how to serve a chest X-ray classification model from HuggingFace using NVIDIA Triton Inference Server. The model can detect 14 different medical conditions from chest X-ray images.
+This repository demonstrates how to serve a chest X-ray classification model from HuggingFace using NVIDIA Triton Inference Server.
 
 ## Prerequisites
 
-- NVIDIA GPU with CUDA support
-- Docker with NVIDIA Container Toolkit
-- Python 3.8+
-- Git LFS
+- NVIDIA GPU
+- [Docker with NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
 ## Quick Start
 
@@ -31,8 +29,12 @@ pip install -r requirements.txt
 python client.py
 ```
 
+## 4. Test in other languages
 
-## Scaling the server to enable multiple instances on a single GPU
+You can also create a client in other languages (JAVA, C++, etc). Please refer to the [this guide](https://github.com/triton-inference-server/client?tab=readme-ov-file#client-library-apis) for more information.
+
+
+## 5. Scaling the server to enable multiple instances on a single GPU
 
 Please refer to the [NVIDIA Triton Inference Server documentation](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/model_configuration.html#multiple-model-instances)
 
